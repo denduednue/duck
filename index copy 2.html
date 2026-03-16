@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+    <base href="https://cdn.statically.io/gh/denduednue/duck@main/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity Web Player | Untitled Goose Game</title>
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/web-ports/untitled-goose-game/refs/heads/main/TemplateData/favicon.ico">
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/web-ports/untitled-goose-game/refs/heads/main/TemplateData/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="loading-text"
@@ -70,8 +71,8 @@
     }
     (async () => {
       const [dataUrl, wasmUrl] = await Promise.all([
-        mergeFiles(getParts("https://raw.githubusercontent.com/web-ports/untitled-goose-game/refs/heads/main/Build/Untitled Goose Game.data.part", 1, 4), "Untitled Goose Game.data"),
-        mergeFiles(getParts("https://raw.githubusercontent.com/web-ports/untitled-goose-game/refs/heads/main/Build/Untitled Goose Game.wasm.part", 1, 2), "Untitled Goose Game.wasm"),
+        mergeFiles(getParts("Build/Untitled Goose Game.data", 1, 4), "Untitled Goose Game.data"),
+        mergeFiles(getParts("Build/Untitled Goose Game.wasm", 1, 2), "Untitled Goose Game.wasm"),
       ]);
 
       var container = document.querySelector("#unity-container");
@@ -89,7 +90,7 @@
       function unityShowBanner(msg, type) {
       }
 
-      var buildUrl = "https://raw.githubusercontent.com/web-ports/untitled-goose-game/refs/heads/main/Build";
+      var buildUrl = "Build";
       var loaderUrl = buildUrl + "/Untitled Goose Game.loader.js";
       var config = {
         arguments: [],
